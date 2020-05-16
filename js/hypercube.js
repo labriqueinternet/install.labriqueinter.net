@@ -403,7 +403,7 @@ var view = {
     $('#timeline a[data-tab=' + step + ']').parent().addClass('active');
 
     if(step == 'aboutyou') {
-      view.showQuestion('hardware');
+      view.showQuestion('dotcube');
     }
 
     if(step == 'vpn') {
@@ -946,18 +946,8 @@ var controller = {
   },
 
   customPreinstalledChange: function() {
-    if($(this).is(':checked')) {
-      $('.custom-install').hide();
-      $('#ig-install').hide();
-      $('#ig-postinstall').show();
-      $('#removeusb').show();
-
-    } else {
-      $('.custom-install').show();
-      $('#ig-install').show();
-      $('#ig-postinstall').hide();
-      $('#removeusb').hide();
-    }
+    $('#ig-postinstall').show();
+    $('#removeusb').show();
   },
 
   customInstallSdChange: function() {
@@ -1131,18 +1121,10 @@ var controller = {
     pdf.text(15, verticalOffset, _('Installation'));
     verticalOffset += 12;
 
-    $('#ig-customization').find('h3, label').each(add);
-    verticalOffset += 7;
-
     if($('#ig-postinstall').is(':visible')) {
       $('#ig-postinstall').find('h3, p, li').each(add);
       pdf.addImage(preinstalledImg, 'JPEG', 5*15, verticalOffset + 2, 50, 39);
       verticalOffset += 52;
-    }
-
-    if($('#ig-install').is(':visible')) {
-      $('#ig-install').find('h3, p, li, pre').each(add);
-      verticalOffset += 7;
     }
 
     $('#ig-newwifi').find('h3, p, li, div#wifipwd').each(add);
@@ -1258,31 +1240,7 @@ var navigation = {
   questionClick: function() {
     var question = $(this).parents('.question').attr('id');
 
-    if(question == 'question-hardware') {
-      if($(this).data('answer') == 'yes') {
-        view.showQuestion('preinstalled');
-      } else {
-        navigation.goToStep('ffdn');
-      }
-
-    } else if(question == 'question-preinstalled') {
-      if($(this).data('answer') == 'yes') {
-        if(!$('#custom_preinstalled').is(':checked')) {
-          $('#custom_preinstalled').parent().click();
-          $('#custom_preinstalled').prop('checked', true);
-        }
-
-        view.showQuestion('dotcube');
-      } else {
-        if($('#custom_preinstalled').is(':checked')) {
-          $('#custom_preinstalled').parent().click();
-          $('#custom_preinstalled').prop('checked', false);
-        }
-
-        view.showQuestion('level');
-      }
-
-    } else if(question == 'question-level') {
+    if(question == 'question-level') {
       if($(this).data('answer') == 'yes') {
         view.showQuestion('dotcube');
       } else {

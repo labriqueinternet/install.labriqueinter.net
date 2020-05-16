@@ -86,6 +86,7 @@
                 <h2>_("Welcome!")</h2>
 
                 <p>_("You are the happy owner of an Internet Cube, but you do not know how to bootstrap it? This service was designed for you! After some questions about you, you will have to choose some settings, then to follow a quick installation guide.")</p>
+                <p>_("We assume that you have a VPN account with a fixed IP address and a supported hardware.")</p>
                 <p><a href="javascript:" id="start">_("Let's Go!")</a></p>
               </div>
             </div>
@@ -96,33 +97,6 @@
               </div>
 
               <div class="panel-inside">
-                <div id="question-hardware" class="question">
-                  <span>_("Do you have an Internet Cube (LIME or LIME2) and a VPN Account?")</span>
-
-                  <ul class="nav nav-pills questions">
-                    <li><a href="javascript:" data-answer="yes">_("Yes")</a></li>
-                    <li><a href="javascript:" data-answer="no">_("No")</a></li>
-                  </ul>
-                </div>
-
-                <div id="question-preinstalled" class="question">
-                  <span>_("Is your Internet Cube already pre-installed?")</span>
-
-                  <ul class="nav nav-pills questions">
-                    <li><a href="javascript:" data-answer="yes">_("Yes")</a></li>
-                    <li><a href="javascript:" data-answer="no">_("No")</a></li>
-                  </ul>
-                </div>
-
-                <div id="question-level" class="question">
-                  <span>_("Do you know how to use a terminal on GNU/Linux?")</span>
-
-                  <ul class="nav nav-pills questions">
-                    <li><a href="javascript:" data-answer="yes">_("Yes")</a></li>
-                    <li><a href="javascript:" data-answer="no">_("No")</a></li>
-                  </ul>
-                </div>
-
                 <div id="question-dotcube" class="question">
                   <span>_("Do you have a .cube file in the files provided by your VPN provider?")</span>
                   <a href="https://labriqueinter.net/dotcubefiles.html" target="_blank">
@@ -153,7 +127,7 @@
 
               <div class="panel-inside">
                 <h2>_("You need help!")</h2>
-                <p>_("If you do not have an Internet Cube (LIME/LIME2) or a VPN account, or you do not know how to use a terminal on GNU/Linux or to do without .cube file, you should not use this service alone for now, and you should ask someone for some help. It is not a problem, because there are a lot of lovely people, from non-profit organizations, ready to help you :).")</p>
+                <p>_("If you do not have a supported hardware (LIME/LIME2) or a VPN account, or to do without .cube file, you should not use this service alone for now, and you should ask someone for some help. It is not a problem, because there are a lot of lovely people, from non-profit organizations, ready to help you :).")</p>
                 <p>_("You can choose a non-profit organization referenced on the map below, or try to find another one close to you (Linux User Groups, non-profit ISPs, etc). Be carefull when choosing your VPN provider, because you need to trust it more than your current ISP (you should try to meet the people doing it).")</p>
 
                 <div id="ffdnmap">
@@ -598,39 +572,8 @@
                 </div>
 
                 <div id="installguide">
-                  <div id="ig-customization">
-                    <h3>_("Step 1: About your Internet Cube")</h3>
-
-                    <div class="form-group">
-                      <div class="col-sm-3 input-group-btn">
-                        <div class="input-group">
-                          <input type="checkbox" class="form-control switch" id="custom_preinstalled" value="1" checked="checked" />
-                        </div>
-                      </div>
-                      <label for="custom_preinstalled" class="col-sm-9 control-label">_("My Cube is already pre-installed")</label>
-                    </div>
-
-                    <div class="form-group custom-install">
-                      <div class="col-sm-3 input-group-btn">
-                        <div class="input-group">
-                          <input type="checkbox" class="form-control switch" id="custom_lime2" value="1" />
-                        </div>
-                      </div>
-                      <label for="custom_lime2" class="col-sm-9 control-label">_("I have a LIME2")</label>
-                    </div>
-
-                    <div class="form-group custom-install">
-                      <div class="col-sm-9 input-group-btn">
-                        <div class="input-group">
-                          <input type="checkbox" class="form-control switch" id="custom_encrypted" value="1" />
-                        </div>
-                      </div>
-                      <label for="custom_encrypted" class="col-sm-3 control-label">_("I want an encrypted file system (experts only)")</label>
-                    </div>
-                  </div>
-
                   <div id="ig-postinstall">
-                    <h3>_("Step 2: Post-Installation")</h3>
+                    <h3>_("Step 1: Post-Installation")</h3>
 
                     <p>_("You just have to do the post-installation, using your HyperCube file:")</p>
 
@@ -649,37 +592,8 @@
                     <img src="img/wires.png" alt="Internet Cube Cables" />
                   </div>
 
-                  <div id="ig-install">
-                    <h3>_("Step 2: Installation")</h3>
-
-                    <p>_("Install the Cube system on a micro-SD card, using your HyperCube file:")</p>
-
-                    <ol>
-                      <li>
-                        <div><a href="javascript:" class="hypercubelink">_("Download your HyperCube file")</a> <a href="javascript:" class="downloadview"><span class="glyphicon glyphicon-eye-open"></span></a></div>
-                        <textarea class="downloadviewtxt" data-toggle="tooltip" data-title="_('If you cannot directly download the file (e.g. because of Internet Explorer), please copy-paste by yourself this content, into a file named install.hypercube(.txt)')" readonly="readonly"></textarea>
-                      </li>
-                      <li><a href="https://repo.internetcu.be/install-sd.sh" target="_blank">_("Download the SD Card Installer")</a></li>
-                      <li><span>_("On your computer with Debian or Ubuntu, use the SD Card Installer this way:")</span>
-                        <pre class="installsd" id="installsd-noopt">% bash install-sd.sh -y /path/to/your/install.hypercube</pre>
-                        <pre class="installsd" id="installsd-e">% bash install-sd.sh -ey /path/to/your/install.hypercube</pre>
-                        <pre class="installsd" id="installsd-2">% bash install-sd.sh -2y /path/to/your/install.hypercube</pre>
-                        <pre class="installsd" id="installsd-2e">% bash install-sd.sh -e2y /path/to/your/install.hypercube</pre>
-                      </li>
-                      <li>_("Carefully follow the instructions of the Installer, until the end")</li>
-                      <li>_("Unplug your Internet Cube if powered on")</li>
-                      <li>_("Insert your micro-SD card within your Internet Cube")</li>
-                      <li>_("Connect the ethernet cable and the wifi dongle to your router, then the power cable to an outlet")</li>
-                      <li class="unlockencryptedfs"><span>_("After some seconds, on your computer with Debian or Ubuntu, find the YunoHost Admin address corresponding to your Cube, using the SD Card Installer this way:")</span>
-                        <pre>% bash install-sd.sh -l</pre>
-                      </li>
-                      <li class="unlockencryptedfs">_("Unlock your Internet Cube hard disk thanks to a web browser, using the HTTPS address found in the previous step and the passphrase you chose earlier when you were following the SD Card Installer instructions.")</li>
-                      <li class="unlockencryptedfs">_("You will have to unlock your Cube a second time during the installation (you can see exactly when this happens using the section How to Debug The Installation? at the end of this guide).")</li>
-                    </ol>
-                  </div>
-
                   <div id="ig-newwifi">
-                    <h3>_("Step 3: You Got a New Wifi!")</h3>
+                    <h3>_("Step 2: You Got a New Wifi!")</h3>
 
                     <p><strong>_("Wait for something like a few dozen minutes, without unplugging the cables.")</strong> <span>_("Once you can see your new wifi access point from your computer, this means that your Internet Cube is ready and that you can use it. Connect your computer to the new wifi access point.")</span></p>
                     <p id="showwifiname"><span class="glyphicon glyphicon-signal"></span> <span id="wifiname"></span></p>
@@ -691,7 +605,7 @@
                   </div>
 
                   <div id="ig-dnsconfig">
-                    <h3>_("Step 4: DNS Configuration")</h3>
+                    <h3>_("Step 3: DNS Configuration")</h3>
 
                     <p id="nodnsconfig">_("For being able to use the self-hosting features of your Cube, you have to configure your domain name, on the registrar side. But, because you have not filled out the IPv4 Assigned Address field in the VPN step, your DNS Configuration can not be generated here. Please, fill out this field and go back here, or get help from a non-profit organization.")</p>
                     <p id="dnsconfigdynette">_("You have no DNS configuration to do, because you chose a domain ending by nohost.me or noho.st. However, you should do the steps described above quickly, because your domain will only be registered during your Cube installation.")</p>
@@ -736,7 +650,7 @@
                   </div>
 
                   <div id="ig-selfhosting">
-                    <h3>_("Step 5: Self-Hosting")</h3>
+                    <h3>_("Step 4: Self-Hosting")</h3>
 
                     <p>_("If you want to update your settings, add accounts, add email addresses or configure some web services to host, you just have to access the web administration, named YunoHost (you will have to accept the security exception proposed by your browser):")</p>
 

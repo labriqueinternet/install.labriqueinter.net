@@ -523,12 +523,8 @@ p.showpwd {
   display: none;
 }
 
-#ig-install, .unlockencryptedfs {
+.unlockencryptedfs {
   display: none;
-}
-
-#ig-customization div.form-group {
-  margin: 20px 0 0 20px;
 }
 
 #ig-extralinks {
@@ -615,10 +611,6 @@ a.btn-danger:hover span {
   background-color: #289e22;
   background-position: 0px -30px;
   background-repeat: repeat-x;
-}
-
-.custom-install {
-  display: none;
 }
 
 hr {
