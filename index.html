@@ -28,12 +28,12 @@
  it under the terms of the GNU Affero General Public License as published by
  the Free Software Foundation, either version 3 of the License, or
  (at your option) any later version.
- 
+
  This program is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU Affero General Public License for more details.
- 
+
  You should have received a copy of the GNU Affero General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
@@ -68,7 +68,7 @@
         <li><div class="nav-wedge"></div><a href="javascript:" class="nav-main" data-tab="yunohost">YunoHost</a><div class="nav-arrow"></div></li>
         <li><div class="nav-wedge"></div><a href="javascript:" data-tab="installation">_("Installation")</a></li>
       </ul>
-    
+
       <div class="row">
         <div class="col-sm-offset-2 col-sm-8">
           <form class="form-horizontal" role="form">
@@ -76,7 +76,7 @@
               <div class="panel-heading">
                 <h3 class="panel-title">_("Welcome")</h3>
               </div>
-  
+
               <div class="panel-inside">
                 <div class="alert alert-dismissible alert-info fade in" role="alert">
                   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">_("Close")</span></button>
@@ -94,11 +94,11 @@
               <div class="panel-heading">
                 <h3 class="panel-title">_("About You")</h3>
               </div>
-  
+
               <div class="panel-inside">
                 <div id="question-hardware" class="question">
                   <span>_("Do you have an Internet Cube (LIME or LIME2) and a VPN Account?")</span>
-    
+
                   <ul class="nav nav-pills questions">
                     <li><a href="javascript:" data-answer="yes">_("Yes")</a></li>
                     <li><a href="javascript:" data-answer="no">_("No")</a></li>
@@ -107,28 +107,28 @@
 
                 <div id="question-preinstalled" class="question">
                   <span>_("Is your Internet Cube already pre-installed?")</span>
-    
+
                   <ul class="nav nav-pills questions">
                     <li><a href="javascript:" data-answer="yes">_("Yes")</a></li>
                     <li><a href="javascript:" data-answer="no">_("No")</a></li>
                   </ul>
                 </div>
-  
+
                 <div id="question-level" class="question">
                   <span>_("Do you know how to use a terminal on GNU/Linux?")</span>
-    
+
                   <ul class="nav nav-pills questions">
                     <li><a href="javascript:" data-answer="yes">_("Yes")</a></li>
                     <li><a href="javascript:" data-answer="no">_("No")</a></li>
                   </ul>
                 </div>
-  
+
                 <div id="question-dotcube" class="question">
                   <span>_("Do you have a .cube file in the files provided by your VPN provider?")</span>
                   <a href="https://labriqueinter.net/dotcubefiles.html" target="_blank">
                     _(".cube file documentation")
                   </a>
-    
+
                   <ul class="nav nav-pills questions">
                     <li><a href="javascript:" data-answer="yes">_("Yes")</a></li>
                     <li><a href="javascript:" data-answer="no">_("No")</a></li>
@@ -137,7 +137,7 @@
 
                 <div id="question-configvpn" class="question">
                   <span>_("Do not use a .cube file is a very bad idea... Are you an expert?")</span>
-    
+
                   <ul class="nav nav-pills questions">
                     <li><a href="javascript:" data-answer="yes">_("Yes")</a></li>
                     <li><a href="javascript:" data-answer="no">_("No")</a></li>
@@ -145,12 +145,12 @@
                 </div>
               </div>
             </div>
-  
+
             <div class="panel panel-default" id="panel-ffdn">
               <div class="panel-heading">
                 <h3 class="panel-title">_("Internet Cube and VPN providers")</h3>
               </div>
-  
+
               <div class="panel-inside">
                 <h2>_("You need help!")</h2>
                 <p>_("If you do not have an Internet Cube (LIME/LIME2) or a VPN account, or you do not know how to use a terminal on GNU/Linux or to do without .cube file, you should not use this service alone for now, and you should ask someone for some help. It is not a problem, because there are a lot of lovely people, from non-profit organizations, ready to help you :).")</p>
@@ -163,7 +163,7 @@
                 <p id="ffdnlink"><span class="glyphicon glyphicon-user"></span> <a href="https://db.ffdn.org">db.ffdn.org</a></p>
               </div>
             </div>
-  
+
             <div class="panel panel-default tab" id="panel-vpn-manual">
               <div class="panel-heading">
                 <h3 class="panel-title">_("VPN")</h3>
@@ -173,7 +173,7 @@
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">_("Close")</span></button>
                 <span>_("If you do not know how to complete this step, please ask your VPN provider for a .cube file, and")</span> <a href="javascript:" id="vpnauto">_("use it")</a>.
               </div>
-  
+
               <div class="alert alert-dismissible alert-danger fade in" role="alert">
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">_("Close")</span></button>
                 <strong>_("You have some issues to fix in this step.")</strong>
@@ -183,32 +183,32 @@
                 <li class="active"><a href="javascript:" data-tab="tab-vpn-main">_("Main")</a></li>
                 <li><a href="javascript:" data-tab="tab-vpn-advanced">_("Advanced")</a></li>
               </ul>
-    
+
               <div class="panel-inside">
                 <div class="tab" id="tab-vpn-main">
                   <h4 class="panel-section panel-section-first">_("Settings")</h4>
-  
+
                   <div class="form-group">
                     <label for="vpn_server_name" class="col-sm-3 control-label">_("Server Address")</label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="vpn_server_name" placeholder="vpn.example.net" />
                     </div>
                   </div>
-      
+
                   <div class="form-group">
                     <label for="vpn_server_port" class="col-sm-3 control-label">_("Server Port")</label>
                     <div class="col-sm-9">
                       <input type="text" data-toggle="tooltip" data-title="_('With restricted access, you should use 443 (TCP) or 53 (UDP)')" class="form-control" id="vpn_server_port" value="1194" placeholder="1194" />
                     </div>
                   </div>
-      
+
                   <div class="form-group">
                     <label for="vpn_server_proto" class="col-sm-3 control-label">_("Protocol")</label>
                     <div class="btn-group col-sm-9" data-toggle="buttons">
                       <label class="btn btn-default active">
                         <input type="radio" name="vpn_server_proto" id="vpn_server_proto_udp" value="udp" checked="checked" /> <span>_("UDP")</span>
                       </label>
-      
+
                       <label class="btn btn-default" id="tcpchbx" data-toggle="tooltip" data-title="_('UDP is more efficient than TCP (but more filtered in case of restrictive access)')">
                         <input type="radio" name="vpn_server_proto" id="vpn_server_proto_tcp" value="tcp" /> <span>_("TCP")</span>
                       </label>
@@ -221,7 +221,7 @@
                       <input type="text" class="form-control" id="vpn_ip4_addr" placeholder="203.0.113.42" />
                     </div>
                   </div>
- 
+
                   <div class="form-group">
                     <label for="vpn_ip6_net" class="col-sm-3 control-label optionalfield">_("IPv6 Delegated Prefix")</label>
                     <div class="col-sm-9">
@@ -230,7 +230,7 @@
                   </div>
 
                   <h4 class="panel-section">_("Authentication")</h4>
-  
+
                   <div class="form-group">
                     <label for="vpn_crt_server_ca" class="col-sm-3 control-label">_("Server CA")</label>
                     <div class="input-group input-chooser col-sm-9">
@@ -242,25 +242,25 @@
                       <a class="btn input-group-addon filebrowse" id="vpn_crt_server_ca_chooserbtn" data-toggle="tooltip" data-title="_('Browse')"><span class="glyphicon glyphicon-search"></span></a>
                     </div>
                   </div>
-  
+
                   <div class="form-group" id="vpn_auth_type">
                     <label for="vpn_auth_type" class="col-sm-3 control-label">_("Authentication Type")</label>
                     <div class="btn-group col-sm-9" data-toggle="buttons">
                       <label class="btn btn-default">
                         <input type="checkbox" data-auth="vpn_auth_type_crt" value="1" /> <span>_("Certificates")</span>
                       </label>
-      
+
                       <label class="btn btn-default">
                         <input type="checkbox" data-auth="vpn_auth_type_login" value="1" /> <span>_("Login")</span>
                       </label>
-  
+
                       <label class="btn btn-default">
                         <input type="checkbox" data-auth="vpn_auth_type_ta" value="1" /> <span>_("Shared-Secret")</span>
                       </label>
                     </div>
                   </div>
-    
-                  <div id="vpn_auth_type_crt">  
+
+                  <div id="vpn_auth_type_crt">
                     <div class="form-group">
                       <label for="vpn_crt_client" class="col-sm-3 control-label">_("Client Cert")</label>
                       <div class="input-group input-chooser col-sm-9">
@@ -272,7 +272,7 @@
                         <a class="btn input-group-addon filebrowse" id="vpn_crt_client_chooserbtn" data-toggle="tooltip" data-title="_('Browse')"><span class="glyphicon glyphicon-search"></span></a>
                       </div>
                     </div>
-      
+
                     <div class="form-group">
                       <label for="vpn_crt_client_key" class="col-sm-3 control-label">_("Client Key")</label>
                       <div class="input-group input-chooser col-sm-9">
@@ -285,7 +285,7 @@
                       </div>
                     </div>
                   </div>
-    
+
                   <div id="vpn_auth_type_login">
                     <div class="form-group">
                       <label for="vpn_login_user" class="col-sm-3 control-label">_("Username")</label>
@@ -293,7 +293,7 @@
                         <input type="text" data-toggle="tooltip" class="form-control" id="vpn_login_user" placeholder="jdoe" />
                       </div>
                     </div>
-      
+
                     <div class="form-group">
                       <label for="vpn_login_passphrase" class="col-sm-3 control-label">_("Password")</label>
                       <div class="col-sm-9">
@@ -308,7 +308,7 @@
                       </div>
                     </div>
                   </div>
-  
+
                   <div id="vpn_auth_type_ta">
                     <div class="form-group">
                       <label for="vpn_crt_ta" class="col-sm-3 control-label">_("Shared-Secret")</label>
@@ -323,33 +323,33 @@
                     </div>
                   </div>
                 </div>
-    
+
                 <div class="tab" id="tab-vpn-advanced">
                   <h4 class="panel-section panel-section-first">_("DNS")</h4>
-  
+
                   <div class="form-group">
                     <label for="vpn_dns0" class="col-sm-3 control-label">_("First resolver")</label>
                     <div class="col-sm-9">
                       <input type="text" data-toggle="tooltip" data-title="_('IPv6 or IPv4')" class="form-control" id="vpn_dns0" placeholder="89.234.141.66" value="89.234.141.66" />
                     </div>
                   </div>
-    
+
                   <div class="form-group">
                     <label for="vpn_dns1" class="col-sm-3 control-label">_("Second resolver")</label>
                     <div class="col-sm-9">
                       <input type="text" data-toggle="tooltip" data-title="_('IPv6 or IPv4')" class="form-control" id="vpn_dns1" placeholder="2001:913::8" value="2001:913::8" />
                     </div>
                   </div>
-  
+
                   <h4 class="panel-section">_("OpenVPN")</h4>
-  
+
                   <div class="form-group">
                     <label for="vpn_openvpn_add" class="col-sm-3 control-label optionalfield">_("Options to add")</label>
                     <div class="col-sm-9">
                       <textarea class="form-control" id="vpn_openvpn_add"></textarea>
                     </div>
                   </div>
-  
+
                   <div class="form-group">
                     <label for="vpn_openvpn_rm" class="col-sm-3 control-label optionalfield">_("Options to remove")</label>
                     <div class="col-sm-9">
@@ -359,17 +359,17 @@
                 </div>
               </div>
             </div>
-    
+
             <div class="panel panel-default" id="panel-vpn-auto">
               <div class="panel-heading">
                 <h3 class="panel-title">_("VPN")</h3>
               </div>
-  
+
               <div class="alert alert-dismissible alert-danger fade in" role="alert">
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">_("Close")</span></button>
                 <strong>_("You have some issues to fix in this step.")</strong>
               </div>
-    
+
               <div class="panel-inside">
                 <div class="form-group">
                   <label for="vpn_cubefile" class="col-sm-3 control-label">_("Dot Cube File")</label>
@@ -383,22 +383,22 @@
                 <p class="cubefilelink" id="modifycubefile"><a href="javascript:">_("Edit values")</a></p>
               </div>
             </div>
-  
+
             <div class="panel panel-default tab" id="panel-yunohost">
               <div class="panel-heading">
                 <h3 class="panel-title">YunoHost</h3>
               </div>
-  
+
               <div class="alert alert-dismissible alert-danger fade in" role="alert">
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">_("Close")</span></button>
                 <strong>_("You have some issues to fix in this step.")</strong>
               </div>
-  
+
               <ul class="nav nav-tabs nav-justified">
                 <li class="active"><a href="javascript:" data-tab="tab-yunohost-main">_("Main")</a></li>
                 <li><a href="javascript:" data-tab="tab-yunohost-advanced">_("Advanced")</a></li>
               </ul>
-    
+
               <div class="panel-inside">
                 <div class="tab" id="tab-yunohost-main">
                   <h4 class="panel-section panel-section-first">YunoHost</h4>
@@ -478,10 +478,10 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="tab" id="tab-yunohost-advanced">
                   <h4 class="panel-section panel-section-first">YunoHost</h4>
-  
+
                   <div class="form-group">
                     <label for="ynh_user_password" class="col-sm-3 control-label">_("User Password")</label>
                     <div class="col-sm-9">
@@ -511,35 +511,35 @@
                       <input type="text" class="form-control" id="hotspot_ip6_dns0" placeholder="2001:913::8" value="2001:913::8" />
                     </div>
                   </div>
-  
+
                   <div class="form-group">
                     <label for="hotspot_ip6_dns1" class="col-sm-3 control-label">_("Second IPv6 DNS resolver")</label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="hotspot_ip6_dns1" placeholder="2001:910:800::40" value="2001:910:800::40" />
                     </div>
                   </div>
-  
+
                   <div class="form-group">
                     <label for="hotspot_ip4_dns0" class="col-sm-3 control-label">_("First IPv4 DNS resolver")</label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="hotspot_ip4_dns0" placeholder="80.67.188.188" value="80.67.188.188" />
                     </div>
                   </div>
-  
+
                   <div class="form-group">
                     <label for="hotspot_ip4_dns1" class="col-sm-3 control-label">_("Second IPv4 DNS resolver")</label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="hotspot_ip4_dns1" placeholder="80.67.169.12" value="80.67.169.12" />
                     </div>
                   </div>
-  
+
                   <div class="form-group">
                     <label for="hotspot_ip4_nat_prefix" class="col-sm-3 control-label">_("IPv4 NAT Prefix (/24)")</label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="hotspot_ip4_nat_prefix" placeholder="10.0.242" value="10.0.242" />
                     </div>
                   </div>
-  
+
                   <div class="form-group">
                     <label for="hotspot_firmware_nonfree" class="col-sm-3 control-label">_("Non-free firmwares")</label>
                     <div class="col-sm-9 input-group-btn">
@@ -572,12 +572,12 @@
               <div class="panel-heading">
                 <h3 class="panel-title">_("Ready to Install!")</h3>
               </div>
-  
+
               <div class="alert alert-dismissible alert-danger fade in" role="alert">
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">_("Close")</span></button>
                 <strong>_("You must first fix issues raised in the previous steps.")</strong>
               </div>
-  
+
               <div class="panel-inside panel-text" id="panel-submit">
                 <h2>_("Installation Guide")</h2>
 
@@ -609,7 +609,7 @@
                       </div>
                       <label for="custom_preinstalled" class="col-sm-9 control-label">_("My Cube is already pre-installed")</label>
                     </div>
-  
+
                     <div class="form-group custom-install">
                       <div class="col-sm-3 input-group-btn">
                         <div class="input-group">
@@ -618,7 +618,7 @@
                       </div>
                       <label for="custom_lime2" class="col-sm-9 control-label">_("I have a LIME2")</label>
                     </div>
-  
+
                     <div class="form-group custom-install">
                       <div class="col-sm-9 input-group-btn">
                         <div class="input-group">
@@ -628,12 +628,12 @@
                       <label for="custom_encrypted" class="col-sm-3 control-label">_("I want an encrypted file system (experts only)")</label>
                     </div>
                   </div>
-  
+
                   <div id="ig-postinstall">
                     <h3>_("Step 2: Post-Installation")</h3>
-  
+
                     <p>_("You just have to do the post-installation, using your HyperCube file:")</p>
-  
+
                     <ol>
                       <li>
                         <div><a href="javascript:" class="hypercubelink">_("Download your HyperCube file")</a> <a href="javascript:" class="downloadview"><span class="glyphicon glyphicon-eye-open"></span></a></div>
@@ -680,11 +680,11 @@
 
                   <div id="ig-newwifi">
                     <h3>_("Step 3: You Got a New Wifi!")</h3>
-  
+
                     <p><strong>_("Wait for something like a few dozen minutes, without unplugging the cables.")</strong> <span>_("Once you can see your new wifi access point from your computer, this means that your Internet Cube is ready and that you can use it. Connect your computer to the new wifi access point.")</span></p>
                     <p id="showwifiname"><span class="glyphicon glyphicon-signal"></span> <span id="wifiname"></span></p>
                     <div class="showpwd"><a href="javascript:">_("Show wifi password")</a> <div class="hiddenpwd"><div id="wifipwd"></div></div></div>
-  
+
                     <p><span>_("Congratulations, you now have a clean Internet access!")</span> <span id="removeusb">_("You can remove the USB stick (1) from your Cube.")</span>
 
                     <p>_("If you do not see your new wifi access point after several dozen minutes, you should ask someone for some help. You can also try to follow the How to Debug The Installation? section at the end of this guide.")</p>
@@ -698,7 +698,7 @@
 
                     <div id="dnsconfig">
                       <p>_("For being able to use the self-hosting features of your Cube, you have to configure your domain name, on the registrar side. Please, click on the registrar you chose for your domain name (if yours is not listed, please get help from a non-profit organization):")</p>
-  
+
                       <ul id="registrars">
                         <li id="ovh"><a href="javascript:">OVH</a>
                           <ol>
@@ -737,9 +737,9 @@
 
                   <div id="ig-selfhosting">
                     <h3>_("Step 5: Self-Hosting")</h3>
-  
+
                     <p>_("If you want to update your settings, add accounts, add email addresses or configure some web services to host, you just have to access the web administration, named YunoHost (you will have to accept the security exception proposed by your browser):")</p>
-  
+
                     <p id="showadmindomain"><span class="glyphicon glyphicon-wrench"></span> <a href="javascript:" id="admindomain" target="_blank"></a></p>
                     <div id="showadminalt"><a href="javascript:">_("Show alternative URLs")</a></div>
                     <div id="showadminurls">
@@ -750,7 +750,7 @@
                     <div class="showpwd"><a href="javascript:">_("Show admin password")</a> <div class="hiddenpwd"><div id="ynhpwd"></div></div></div>
 
                     <p>_("If you want to access to your current apps, go to:")</p>
-  
+
                     <p id="showadmindomain"><span class="glyphicon glyphicon-home"></span> <a href="javascript:" id="userdomain" target="_blank"></a></p>
                     <div class="showpwd"><a href="javascript:">_("Show user credentials")</a> <div class="hiddenpwd"><div id="userpwd"></div></div></div>
 
@@ -788,7 +788,7 @@
                     </ul>
 
                     <p>_("If you experience problems using the web administration, please read the YunoHost Documentation, or ask for some help to a non-profit organization:")</p>
-  
+
                     <p class="ynhdoc"><span class="glyphicon glyphicon-book"></span> <a href="https://yunohost.org/docs" target="_blank">_("Documentation")</a> / <span class="glyphicon glyphicon-user"></span> <a href="https://db.ffdn.org" target="_blank">_("Getting Help")</a></p>
                   </div>
 
@@ -796,14 +796,14 @@
 
                   <div id="ig-security" class="ig-hidden">
                     <h3><span class="glyphicon glyphicon-chevron-right"></span> <span class="ig-hidden-link">_("A Word About Security")</span></h3>
-  
+
                     <p>_("1) Your Cube/HyperCube files contain private keys and passwords. Keep them secret and never provide them to anyone.")</p>
                     <p>_("2) A Cube is just a computer, so keep in mind that it can die any time. Therefore, if you use it for self-hosting, be sure to make regular backups of your data (emails, files, etc).")</p>
                   </div>
 
                   <div id="ig-poweroff" class="ig-hidden">
                     <h3><span class="glyphicon glyphicon-chevron-right"></span> <span class="ig-hidden-link">_("How to Properly Power Off my Cube?")</span></h3>
-  
+
                     <p>_("Whenever possible, do not disconnect the power supply from your Internet Cube, without having first switched it off (otherwise, this could lead to database errors). For turning off your Internet Cube, just quick press the bottom-left button, using a pen. Then, wait until all the lights are turned off (especially the orange one, close to the ethernet cable, on the opposite side). You now can disconnect the power supply.")</p>
 
                     <img src="img/poweroff.png" alt="Powering Off a Cube" />
@@ -811,7 +811,7 @@
 
                   <div id="ig-debug" class="ig-hidden">
                     <h3><span class="glyphicon glyphicon-chevron-right"></span> <span class="ig-hidden-link">_("How to Debug The Installation?")</span></h3>
-  
+
                     <p>_("Sometimes, things go wrong... To help you to debug, you can follow what your Cube is doing, during the installation process (i.e. the first time you plug your Cube after following this guide).")</p>
                     <p>_("For that, follow these instructions (you maybe will have to ask for help to someone):")</p>
 
@@ -838,7 +838,7 @@
                 </div>
               </div>
             </div>
-                  
+
             <div id="buttons">
               <div class="alert alert-dismissible alert-danger fade in" id="alert-next" role="alert">
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">_("Close")</span></button>

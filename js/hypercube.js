@@ -2,17 +2,17 @@
  * Copyright (C) 2016 Julien Vaubourg <julien@vaubourg.com>
  * Contribute at https://github.com/labriqueinternet/labriqueinter.net/
  * Report issues at https://github.com/labriqueinternet/labriqueinter.net/issues
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -39,7 +39,7 @@ var cube = {
         txt = txt.replace(/\n/g, '|');
         txt = txt.replace(/^.*\|(-.*-\|.*\|-.*-)\|.*$/, '$1');
       }
-    
+
       return txt;
     },
 
@@ -366,7 +366,7 @@ var hypercube = {
     try {
       var fileContent = window.btoa(hypercube.toJsonTxt(json));
       fileContent = "data:application/octet-stream;base64," + fileContent;
-  
+
       $('.hypercubelink').attr('href', fileContent);
       $('.hypercubelink').attr('download', 'install.hypercube');
 
@@ -421,7 +421,7 @@ var view = {
     $('#alert-next').hide();
     $('html, body').animate({ scrollTop: 0 }, 'slow');
   },
-  
+
   showButtonNext: function(nextStep) {
     $('#button-next').data('next-panel', nextStep);
     $('#button-next').show();
@@ -700,7 +700,7 @@ var controller = {
 
   vpnAuthTypeChange: function() {
     var name = $(this).data('auth');
-  
+
     if($(this).is(':checked')) {
       $('#' + name).show();
     } else {
@@ -867,7 +867,7 @@ var controller = {
             username += part.trim().replace(/(.).*/, '$1');
           }
         });
-        
+
         username += nameparts[nameparts.length - 1];
         username = username.toLowerCase();
 
@@ -876,7 +876,7 @@ var controller = {
         username = username.replace(/ç/g,'c');
         username = username.replace(/[èéêë]/g,'e');
         username = username.replace(/[ìíîï]/g,'i');
-        username = username.replace(/ñ/g,'n');                
+        username = username.replace(/ñ/g,'n');
         username = username.replace(/[òóôõö]/g,'o');
         username = username.replace(/œ/g,'oe');
         username = username.replace(/[ùúûü]/g,'u');
@@ -893,7 +893,7 @@ var controller = {
     if(!$('#ynh_user').val().trim() || $('#ynh_user').val().trim() == oldUsername) {
       $('#ynh_user').val(genUsername($(this).val()));
     }
-    
+
     $(this).data('old-value', $(this).val().trim());
   },
 
@@ -1245,19 +1245,19 @@ var navigation = {
 
   tabClick: function () {
     var active = $(this).data('tab');
-  
+
     $(this).parents('.nav').find('li.active').removeClass('active');
     $(this).parent().addClass('active');
     $(this).parents('ul').parent().find('.tab').hide();
 
     $('#' + active).show();
-  
+
     return false;
   },
 
   questionClick: function() {
     var question = $(this).parents('.question').attr('id');
-  
+
     if(question == 'question-hardware') {
       if($(this).data('answer') == 'yes') {
         view.showQuestion('preinstalled');
@@ -1288,7 +1288,7 @@ var navigation = {
       } else {
         navigation.goToStep('ffdn');
       }
-  
+
     } else if(question == 'question-dotcube') {
       $('#vpn-choice').data('auto', $(this).data('answer'));
 
@@ -1753,7 +1753,7 @@ var validation = {
       if(!$('#ynh_user').val().trim().match(/^[a-z0-9_]+$/)) {
         validation.warnings.add('ynh_user', _("Only lowercase letters, digits and underscore are allowed"));
         nbWarns++;
-  
+
       } else if($('#ynh_user').val().trim() == 'admin') {
         validation.warnings.add('ynh_user', _("Admin is not an authorized value"));
         nbWarns++;
@@ -1856,7 +1856,7 @@ var i18n = {
         $(this).data('title', _(matches[1]));
       }
     });
-  
+
     $('h1, h2, h3, h4, label, span, a, li, strong, p, em, button, .i18n').each(function() {
       if($(this).children().length == 0) {
         var text = $(this).text();
