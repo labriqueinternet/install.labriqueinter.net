@@ -2,17 +2,17 @@
  * Copyright (C) 2016 Julien Vaubourg <julien@vaubourg.com>
  * Contribute at https://github.com/labriqueinternet/labriqueinter.net/
  * Report issues at https://github.com/labriqueinternet/labriqueinter.net/issues
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -39,7 +39,7 @@ var cube = {
         txt = txt.replace(/\n/g, '|');
         txt = txt.replace(/^.*\|(-.*-\|.*\|-.*-)\|.*$/, '$1');
       }
-    
+
       return txt;
     },
 
@@ -366,7 +366,7 @@ var hypercube = {
     try {
       var fileContent = window.btoa(hypercube.toJsonTxt(json));
       fileContent = "data:application/octet-stream;base64," + fileContent;
-  
+
       $('.hypercubelink').attr('href', fileContent);
       $('.hypercubelink').attr('download', 'install.hypercube');
 
@@ -403,7 +403,7 @@ var view = {
     $('#timeline a[data-tab=' + step + ']').parent().addClass('active');
 
     if(step == 'aboutyou') {
-      view.showQuestion('hardware');
+      view.showQuestion('dotcube');
     }
 
     if(step == 'vpn') {
@@ -421,7 +421,7 @@ var view = {
     $('#alert-next').hide();
     $('html, body').animate({ scrollTop: 0 }, 'slow');
   },
-  
+
   showButtonNext: function(nextStep) {
     $('#button-next').data('next-panel', nextStep);
     $('#button-next').show();
@@ -700,7 +700,7 @@ var controller = {
 
   vpnAuthTypeChange: function() {
     var name = $(this).data('auth');
-  
+
     if($(this).is(':checked')) {
       $('#' + name).show();
     } else {
@@ -867,7 +867,7 @@ var controller = {
             username += part.trim().replace(/(.).*/, '$1');
           }
         });
-        
+
         username += nameparts[nameparts.length - 1];
         username = username.toLowerCase();
 
@@ -876,7 +876,7 @@ var controller = {
         username = username.replace(/ç/g,'c');
         username = username.replace(/[èéêë]/g,'e');
         username = username.replace(/[ìíîï]/g,'i');
-        username = username.replace(/ñ/g,'n');                
+        username = username.replace(/ñ/g,'n');
         username = username.replace(/[òóôõö]/g,'o');
         username = username.replace(/œ/g,'oe');
         username = username.replace(/[ùúûü]/g,'u');
@@ -893,7 +893,7 @@ var controller = {
     if(!$('#ynh_user').val().trim() || $('#ynh_user').val().trim() == oldUsername) {
       $('#ynh_user').val(genUsername($(this).val()));
     }
-    
+
     $(this).data('old-value', $(this).val().trim());
   },
 
@@ -946,18 +946,8 @@ var controller = {
   },
 
   customPreinstalledChange: function() {
-    if($(this).is(':checked')) {
-      $('.custom-install').hide();
-      $('#ig-install').hide();
-      $('#ig-postinstall').show();
-      $('#removeusb').show();
-
-    } else {
-      $('.custom-install').show();
-      $('#ig-install').show();
-      $('#ig-postinstall').hide();
-      $('#removeusb').hide();
-    }
+    $('#ig-postinstall').show();
+    $('#removeusb').show();
   },
 
   customInstallSdChange: function() {
@@ -1131,18 +1121,10 @@ var controller = {
     pdf.text(15, verticalOffset, _('Installation'));
     verticalOffset += 12;
 
-    $('#ig-customization').find('h3, label').each(add);
-    verticalOffset += 7;
-
     if($('#ig-postinstall').is(':visible')) {
       $('#ig-postinstall').find('h3, p, li').each(add);
       pdf.addImage(preinstalledImg, 'JPEG', 5*15, verticalOffset + 2, 50, 39);
       verticalOffset += 52;
-    }
-
-    if($('#ig-install').is(':visible')) {
-      $('#ig-install').find('h3, p, li, pre').each(add);
-      verticalOffset += 7;
     }
 
     $('#ig-newwifi').find('h3, p, li, div#wifipwd').each(add);
@@ -1245,50 +1227,26 @@ var navigation = {
 
   tabClick: function () {
     var active = $(this).data('tab');
-  
+
     $(this).parents('.nav').find('li.active').removeClass('active');
     $(this).parent().addClass('active');
     $(this).parents('ul').parent().find('.tab').hide();
 
     $('#' + active).show();
-  
+
     return false;
   },
 
   questionClick: function() {
     var question = $(this).parents('.question').attr('id');
-  
-    if(question == 'question-hardware') {
-      if($(this).data('answer') == 'yes') {
-        view.showQuestion('preinstalled');
-      } else {
-        navigation.goToStep('ffdn');
-      }
 
-    } else if(question == 'question-preinstalled') {
-      if($(this).data('answer') == 'yes') {
-        if(!$('#custom_preinstalled').is(':checked')) {
-          $('#custom_preinstalled').parent().click();
-          $('#custom_preinstalled').prop('checked', true);
-        }
-
-        view.showQuestion('dotcube');
-      } else {
-        if($('#custom_preinstalled').is(':checked')) {
-          $('#custom_preinstalled').parent().click();
-          $('#custom_preinstalled').prop('checked', false);
-        }
-
-        view.showQuestion('level');
-      }
-
-    } else if(question == 'question-level') {
+    if(question == 'question-level') {
       if($(this).data('answer') == 'yes') {
         view.showQuestion('dotcube');
       } else {
         navigation.goToStep('ffdn');
       }
-  
+
     } else if(question == 'question-dotcube') {
       $('#vpn-choice').data('auto', $(this).data('answer'));
 
@@ -1753,7 +1711,7 @@ var validation = {
       if(!$('#ynh_user').val().trim().match(/^[a-z0-9_]+$/)) {
         validation.warnings.add('ynh_user', _("Only lowercase letters, digits and underscore are allowed"));
         nbWarns++;
-  
+
       } else if($('#ynh_user').val().trim() == 'admin') {
         validation.warnings.add('ynh_user', _("Admin is not an authorized value"));
         nbWarns++;
@@ -1856,7 +1814,7 @@ var i18n = {
         $(this).data('title', _(matches[1]));
       }
     });
-  
+
     $('h1, h2, h3, h4, label, span, a, li, strong, p, em, button, .i18n').each(function() {
       if($(this).children().length == 0) {
         var text = $(this).text();
