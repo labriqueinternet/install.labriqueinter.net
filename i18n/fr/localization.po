@@ -81,7 +81,7 @@ msgid ""
 "We assume that you have a VPN account with a fixed IP address and a "
 "supported hardware."
 msgstr ""
-"Nous estimons que vous avec un compte VPN avec adresse IP fixe et le "
+"Nous considérons que vous avez un compte VPN avec adresse IP fixe et le "
 "matériel requis."
 
 #: /proc/self/fd/11:90
