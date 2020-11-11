@@ -1,0 +1,26 @@
+@import url(jura-font.css);
+
+#logo h1, #logo h2, #logo h3 {
+    font-family: jurabook;
+}
+
+#logo img {
+    max-height: 12em;
+}
+
+.step-info {
+    color: black;
+    font-size: 0.7em;
+}
+
+.card-body li {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+.card-header {
+    font-weight: bold;
+    font-family: jurabook;
+    border-bottom: 2px solid lightcoral;
+    background-color: #eeeeee;
+}
